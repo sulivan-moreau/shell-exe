@@ -7,7 +7,7 @@ fichier_csv="/Users/sulivanmoreau/shell-exe/Job09/Shell_Userlist.csv"
 while IFS=',' read -r id prenom nom mdp role; do
 
 # Créez un nouvel utilisateur
-useradd -m -c "$prenom $nom" -s /bin/bash "$prenom"
+dscl . -m -c "$prenom $nom" -s /bin/bash "$prenom"
 
 # Rôle utilisateur
 if [ "$role" == "Admin" ]; then
